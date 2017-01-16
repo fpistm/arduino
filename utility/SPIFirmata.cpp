@@ -9,7 +9,7 @@
 
   See file LICENSE.txt for further informations on licensing terms.
 
-  Last updated January 8th, 2017
+  Last updated January 15th, 2017
 */
 
 #include "SPIFirmata.h"
@@ -68,12 +68,14 @@ bool SPIFirmata::handleSysex(uint8_t command, uint8_t argc, uint8_t *argv)
         uint32_t clockSpeed = (uint32_t)argv[3] | ((uint32_t)argv[4] << 7) |
             ((uint32_t)argv[5] << 14) | ((uint32_t)argv[6] << 21) | ((uint32_t)argv[7] << 28);
 
-        if (argc > 8) {
-          mCsPin = argv[8];
+        // argv[8] = wordSize, but not currently used since SPI.transfer only uses 8-bit words
+
+        if (argc > 9) {
+          mCsPin = argv[9];
           pinMode(mCsPin, OUTPUT);
 
-          if (argv[9] != END_SYSEX) {
-            mCsActiveState = argv[9];
+          if (argv[10] != END_SYSEX) {
+            mCsActiveState = argv[10];
           } else {
             // set default
             mCsActiveState = SPI_CS_ACTIVE_LOW;
