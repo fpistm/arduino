@@ -162,7 +162,7 @@ struct i2c_device_info {
 i2c_device_info query[I2C_MAX_QUERIES];
 
 byte i2cRxData[64];
-boolean isI2CEnabled = false;
+bool isI2CEnabled = false;
 signed char queryIndex = -1;
 // default delay time between i2c read request and Wire.requestFrom()
 unsigned int i2cReadDelayTime = 0;
@@ -173,7 +173,7 @@ byte detachedServos[MAX_SERVOS];
 byte detachedServoCount = 0;
 byte servoCount = 0;
 
-boolean isResetting = false;
+bool isResetting = false;
 
 // Forward declare a few functions to avoid compiler errors with older versions
 // of the Arduino IDE.

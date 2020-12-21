@@ -269,7 +269,7 @@ void FirmataClass::parse(byte inputData)
 /**
  * @return Returns true if the parser is actively parsing data.
  */
-boolean FirmataClass::isParsingMessage(void)
+bool FirmataClass::isParsingMessage(void)
 {
   return parser.isParsingMessage();
 }

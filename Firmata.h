@@ -79,7 +79,7 @@ class FirmataClass
     int available(void);
     void processInput(void);
     void parse(unsigned char value);
-    boolean isParsingMessage(void);
+    bool isParsingMessage(void);
 
     /* serial send handling */
     void sendAnalog(byte pin, int value);
@@ -124,7 +124,7 @@ class FirmataClass
     byte pinConfig[TOTAL_PINS];
     int pinState[TOTAL_PINS];
 
-    boolean blinkVersionDisabled;
+    bool blinkVersionDisabled;
 
     /* private methods ------------------------------ */
     void strobeBlinkPin(byte pin, int count, int onInterval, int offInterval);

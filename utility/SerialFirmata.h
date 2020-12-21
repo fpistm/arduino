@@ -219,9 +219,9 @@ class SerialFirmata: public FirmataFeature
 {
   public:
     SerialFirmata();
-    boolean handlePinMode(byte pin, int mode);
+    bool handlePinMode(byte pin, int mode);
     void handleCapability(byte pin);
-    boolean handleSysex(byte command, byte argc, byte* argv);
+    bool handleSysex(byte command, byte argc, byte* argv);
     void update();
     void reset();
     void checkSerial();

@@ -45,7 +45,7 @@ SerialFirmata::SerialFirmata()
 #endif
 }
 
-boolean SerialFirmata::handlePinMode(byte pin, int mode)
+bool SerialFirmata::handlePinMode(byte pin, int mode)
 {
   // used for both HW and SW serial
   if (mode == PIN_MODE_SERIAL) {
@@ -63,7 +63,7 @@ void SerialFirmata::handleCapability(byte pin)
   }
 }
 
-boolean SerialFirmata::handleSysex(byte command, byte argc, byte *argv)
+bool SerialFirmata::handleSysex(byte command, byte argc, byte *argv)
 {
   if (command == SERIAL_MESSAGE) {
 
