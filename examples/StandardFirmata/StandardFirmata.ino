@@ -438,7 +438,7 @@ void digitalWriteCallback(byte port, int value)
 //}
 void reportAnalogCallback(byte analogPin, int value)
 {
-  if (analogPin < TOTAL_ANALOG_PINS) {
+  if ((analogPin < TOTAL_ANALOG_PINS) && IS_PIN_ANALOG(analogPin)) {
     if (value == 0) {
       analogInputsToReport = analogInputsToReport & ~ (1 << analogPin);
     } else {
